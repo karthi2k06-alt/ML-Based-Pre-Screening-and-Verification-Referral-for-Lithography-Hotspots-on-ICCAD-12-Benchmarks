@@ -32,10 +32,11 @@ Confidence Score
 ```
 ## Dataset
 ```text
+This project uses the ICCAD-12 Lithography Hotspot Detection dataset. The dataset was obtained from the ICCAD 2012 CAD Contest, which provides benchmark layout patterns for lithography hotspot detection research.
 
-Dataset Folder Structure
+Due to dataset size and distribution restrictions, the original dataset is not included in this repository. Users should obtain the dataset from the official ICCAD-12 source and place it in the following folder structure before running the code
 
-The dataset should be arranged as follows:
+Dataset Folder Structure:
 
 iccad-official/
 |
