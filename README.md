@@ -31,17 +31,28 @@ Confidence Score
 ## Dataset
 ```text
 
-The project uses the ICCAD-12 lithography hotspot dataset.
+Dataset Folder Structure
 
-It contains 5 benchmarks:
+The dataset should be arranged as follows:
 
-Benchmark 1
-Benchmark 2
-Benchmark 3
-Benchmark 4
-Benchmark 5
+iccad-official/
+|
+|-- iccad1/
+|   |-- train/
+|   |   |-- hs/
+|   |   `-- nhs/
+|   `-- test/
+|       |-- hs/
+|       `-- nhs/
+|
+|-- iccad2/
+|-- iccad3/
+|-- iccad4/
+`-- iccad5/
 
-The dataset contains hotspot (HS) and non-hotspot (NHS) layout patterns.
+The Python code expects the dataset directory to be:
+
+./iccad-official
 ```
 ## CNN Model
 ```text
@@ -135,22 +146,37 @@ The reported missed-hotspot rate represents real hotspots that were routed to SA
 ```
 ## Project Files
 ```text
-scripts/
-    01_baseline_model.py
-    02_referral_logic.py
-    03_final_comparison.py
-
-outputs/
-    Prediction CSV files
-    Referral results
-    Comparison tables
-    Charts
-
-report/
-    IEEE Report
-
-reference/
-    Reference Paper
+G19_Hotspot_GitHub_Package/
+│
+├── README.md
+├── requirements.txt
+├── .gitignore
+│
+├── scripts/
+│   ├── 01_baseline_model.py
+│   ├── 02_referral_logic.py
+│   └── 03_final_comparison.py
+│
+├── outputs/
+│   ├── baseline_metrics_summary.csv
+│   ├── comparison_table.csv
+│   ├── screening_efficiency_table.csv
+│   ├── proposed_bucket_confusion.csv
+│   ├── overall_average_summary.csv
+│   ├── referral_summary.csv
+│   ├── predictions_*.csv
+│   ├── referral_labels_*.csv
+│   └── charts
+│
+├── figures/
+│   ├── missed-hotspot chart
+│   ├── screening-efficiency chart
+│   ├── referral-vs-missed-hotspot chart
+│   ├── baseline 2×2 confusion matrix
+│   └── proposed routing confusion matrix
+│
+└── report/
+    └── ML-Based Pre-Screening and VerificationReferral for Lithography Hotspots on ICCAD-12Benchmarks.pdf
 ```
 ## How to Run
 ```text
