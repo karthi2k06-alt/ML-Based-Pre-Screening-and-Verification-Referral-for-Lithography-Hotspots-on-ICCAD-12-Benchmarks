@@ -27,7 +27,9 @@ Confidence Score
        |          |           |
     Screen     Verify       Flag
      Out       Further
-Dataset
+
+## Dataset
+```text
 
 The project uses the ICCAD-12 lithography hotspot dataset.
 
@@ -41,7 +43,8 @@ Benchmark 5
 
 The dataset contains hotspot (HS) and non-hotspot (NHS) layout patterns.
 
-CNN Model
+##CNN Model
+```text
 
 The CNN takes a grayscale layout image as input.
 
@@ -60,7 +63,8 @@ Sigmoid output
 
 The output is a hotspot confidence score between 0 and 1.
 
-Baseline Method
+##Baseline Method
+```text
 
 The baseline uses a threshold of 0.50.
 
@@ -75,8 +79,8 @@ Recall
 Specificity
 F1-score
 Balanced Accuracy
-Proposed Method
-
+##Proposed Method
+```text
 The proposed method uses two confidence thresholds.
 
 Low confidence
@@ -101,8 +105,8 @@ The tested threshold pairs are:
 0.20 / 0.80
 
 0.10 / 0.90
-Main Result
-
+##Main Result
+```text
 For the 0.20 / 0.80 threshold configuration:
 
 Baseline unchecked hotspot rate : 11.94%
@@ -113,8 +117,8 @@ Reduction                       : 7.17 percentage points
 
 The proposed method sends uncertain patterns to the NEEDS_CHECK group instead of making a direct binary decision.
 
-Important Limitation
-
+##Important Limitation
+```text
 The current project implements the referral system, but the actual detailed verification stage has not yet been performed.
 
 Therefore:
@@ -127,7 +131,8 @@ RISKY       -> Pattern is flagged as likely hotspot
 
 The reported missed-hotspot rate represents real hotspots that were routed to SAFE. It is not the final false-negative rate after actual verification.
 
-Project Files
+##Project Files
+```text
 scripts/
     01_baseline_model.py
     02_referral_logic.py
@@ -145,7 +150,8 @@ report/
 reference/
     Reference Paper
 
-How to Run
+##How to Run
+```text
 1. Prepare the Dataset
 
 Place the ICCAD-12 dataset in:
@@ -157,8 +163,8 @@ python scripts/01_baseline_model.py
 python scripts/02_referral_logic.py
 4. Generate Final Results
 python scripts/03_final_comparison.py
-Requirements
-
+##Requirements
+```text
 The project uses:
 
 Python
@@ -172,8 +178,8 @@ Pillow
 Install the required packages using:
 
 pip install numpy pandas matplotlib scikit-learn pillow tensorflow
-Future Work
-
+##Future Work
+```text
 Future work includes:
 
 Implementing the actual hotspot verification stage
