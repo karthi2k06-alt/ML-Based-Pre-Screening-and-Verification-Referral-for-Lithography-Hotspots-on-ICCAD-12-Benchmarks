@@ -10,6 +10,8 @@ The project has three stages:
 2. Use the CNN confidence score to classify patterns as SAFE, NEEDS_CHECK, or RISKY.
 3. Compare the proposed method with the normal binary classification method.
 
+   The goal is to reduce the number of real hotspots passed unchecked while controlling the number of patterns sent for further verification.
+
 ## Project Flow
 
 ```text
@@ -118,6 +120,35 @@ The tested threshold pairs are:
 
 0.10 / 0.90
 ```
+Baseline vs Proposed Method
+```text
+Baseline
+CNN
+ |
+ v
+Confidence
+ |
+ +---- < 0.50 ----> NON-HOTSPOT
+ |
+ +---- >= 0.50 ---> HOTSPOT
+
+ 
+Proposed
+CNN
+ |
+ v
+Confidence
+ |
+ +---- Low -------> SAFE
+ |
+ +---- Medium ----> NEEDS_CHECK
+ |
+ +---- High ------> RISKY
+
+The proposed method adds an uncertainty region.
+
+Instead of forcing every prediction into only two classes, uncertain predictions can be referred for further checking.
+```
 ## Main Result
 ```text
 For the 0.20 / 0.80 threshold configuration:
@@ -212,9 +243,22 @@ pip install numpy pandas matplotlib scikit-learn pillow tensorflow
 ```text
 Future work includes:
 
-Implementing the actual hotspot verification stage
+Implement the actual downstream hotspot verification stage
 Improving confidence calibration
 Testing different CNN architectures
 Testing additional datasets
 Measuring actual verification time
 Integrating the system into a complete lithography verification flow
+```
+Conclusion
+```text
+This project implements a three-stage hotspot pre-screening and referral system.
+
+The CNN first generates a hotspot confidence score. The confidence score is then used to classify patterns as SAFE, NEEDS_CHECK, or RISKY.
+
+For the 0.20 / 0.80 configuration, the macro-average real-hotspot SAFE rate decreases from 11.94% in the baseline comparison to 4.77%.
+
+The project demonstrates the potential of confidence-based referral for reducing the number of real hotspots passed unchecked while controlling the number of patterns requiring further verification.
+
+However, the downstream verification stage has not yet been implemented, so the current results should be interpreted as routing and pre-screening results rather than final verification accuracy.
+```
