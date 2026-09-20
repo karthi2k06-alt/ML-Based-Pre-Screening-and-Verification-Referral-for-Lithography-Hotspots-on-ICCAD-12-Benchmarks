@@ -27,7 +27,7 @@ Confidence Score
        |          |           |
     Screen     Verify       Flag
      Out       Further
-
+```
 ## Dataset
 ```text
 
@@ -42,7 +42,7 @@ Benchmark 4
 Benchmark 5
 
 The dataset contains hotspot (HS) and non-hotspot (NHS) layout patterns.
-
+```
 ##CNN Model
 ```text
 
@@ -62,7 +62,7 @@ Dense layer
 Sigmoid output
 
 The output is a hotspot confidence score between 0 and 1.
-
+```
 ##Baseline Method
 ```text
 
@@ -79,6 +79,7 @@ Recall
 Specificity
 F1-score
 Balanced Accuracy
+```
 ##Proposed Method
 ```text
 The proposed method uses two confidence thresholds.
@@ -105,6 +106,7 @@ The tested threshold pairs are:
 0.20 / 0.80
 
 0.10 / 0.90
+```
 ##Main Result
 ```text
 For the 0.20 / 0.80 threshold configuration:
@@ -116,7 +118,7 @@ Proposed unchecked hotspot rate : 4.77%
 Reduction                       : 7.17 percentage points
 
 The proposed method sends uncertain patterns to the NEEDS_CHECK group instead of making a direct binary decision.
-
+```
 ##Important Limitation
 ```text
 The current project implements the referral system, but the actual detailed verification stage has not yet been performed.
@@ -130,7 +132,7 @@ NEEDS_CHECK -> Pattern requires further verification
 RISKY       -> Pattern is flagged as likely hotspot
 
 The reported missed-hotspot rate represents real hotspots that were routed to SAFE. It is not the final false-negative rate after actual verification.
-
+```
 ##Project Files
 ```text
 scripts/
@@ -149,7 +151,7 @@ report/
 
 reference/
     Reference Paper
-
+```
 ##How to Run
 ```text
 1. Prepare the Dataset
@@ -163,6 +165,7 @@ python scripts/01_baseline_model.py
 python scripts/02_referral_logic.py
 4. Generate Final Results
 python scripts/03_final_comparison.py
+```
 ##Requirements
 ```text
 The project uses:
@@ -178,6 +181,7 @@ Pillow
 Install the required packages using:
 
 pip install numpy pandas matplotlib scikit-learn pillow tensorflow
+```
 ##Future Work
 ```text
 Future work includes:
