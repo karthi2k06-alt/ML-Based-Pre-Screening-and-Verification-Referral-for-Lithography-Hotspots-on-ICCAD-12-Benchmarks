@@ -1,0 +1,5 @@
+scope,val_accuracy,precision,recall_sensitivity,specificity,f1_score,balanced_accuracy,baseline_missed_hotspot_rate,low_threshold,high_threshold,referral_rate,screening_rate,flagged_rate,missed_hotspot_rate,improvement_pp
+baseline_overall_average,0.9605,0.287,0.8806,0.9614,0.3866,0.921,0.1194,,,,,,,
+proposed_overall_average,,,,,,,,0.1,0.9,0.0568,0.9066,0.0366,0.0199,9.9475
+proposed_overall_average,,,,,,,,0.2,0.8,0.0344,0.9243,0.0413,0.0477,7.1686
+proposed_overall_average,,,,,,,,0.3,0.7,0.0205,0.934,0.0455,0.0801,3.9294
