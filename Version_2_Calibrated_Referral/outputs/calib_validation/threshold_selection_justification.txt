@@ -1,0 +1,11 @@
+THRESHOLD SELECTION JUSTIFICATION (VALIDATION DATA ONLY)
+
+Selected threshold range: 15-85 (low=0.15, high=0.85).
+Worst-benchmark validation missed-hotspot rate: 7.14%.
+Pooled validation missed-hotspot rate: 1.54%.
+Pooled validation referral rate: 8.93%.
+Reason: this candidate satisfies the maximum 7.5% worst-benchmark validation missed-hotspot constraint and has the lowest pooled referral rate among eligible candidates, thereby reducing verification workload while meeting the selected constraint.
+
+Temperature scaling: a separate positive temperature T was optimized for each benchmark by minimizing validation binary cross-entropy (negative log-likelihood). The fitted T values are listed in validation_temperature_summary.csv; they were optimized, not manually chosen arbitrarily.
+
+Important: this is a validation-based selection. Freeze the selected temperatures and threshold range before evaluating the untouched test set.
