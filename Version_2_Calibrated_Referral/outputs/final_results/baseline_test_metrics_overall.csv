@@ -1,0 +1,2 @@
+total_images,total_hotspots,TP,FP,FN,TN,accuracy,precision,recall_sensitivity,specificity,f1_score,balanced_accuracy,missed_hotspots,missed_hotspot_rate_pct,false_negative_rate_pct
+146277,2750,2578,8830,172,134697,0.9384592246217792,0.22598176718092566,0.9374545454545454,0.9384784744333818,0.364175731035457,0.4687272727272727,172,6.254545454545455,6.254545454545455

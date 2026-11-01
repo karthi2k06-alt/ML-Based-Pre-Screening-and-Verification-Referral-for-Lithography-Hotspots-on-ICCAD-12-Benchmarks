@@ -1,0 +1,2 @@
+total_images,total_hotspots,TP,FP,FN,TN,accuracy,precision,recall_sensitivity,specificity,f1_score,balanced_accuracy,missed_hotspots,missed_hotspot_rate_pct,false_negative_rate_pct,low_threshold,high_threshold,interpretation
+146277,2750,2685,18954,65,124573,0.8699795593292179,0.12408151947871898,0.9763636363636363,0.8679412236025278,0.22018122924269137,0.48818181818181816,65,2.3636363636363638,2.3636363636363638,0.15,0.85,Operational: only images marked safe count as negative/pass.
