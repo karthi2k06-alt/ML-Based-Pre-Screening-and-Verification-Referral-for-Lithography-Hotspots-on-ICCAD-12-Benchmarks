@@ -1,0 +1,14 @@
+{
+  "benchmark": 5,
+  "class_names": [
+    "HS",
+    "NHS"
+  ],
+  "hotspot_class_index": 0,
+  "image_size": [
+    64,
+    64
+  ],
+  "output_is_logit_for_class_index_1": true,
+  "epochs_completed": 10
+}
